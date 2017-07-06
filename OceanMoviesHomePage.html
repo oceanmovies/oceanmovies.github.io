@@ -63,6 +63,88 @@
     display: inline-block;
     float: left;
         }
+    input[type=text]
+        {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .stuff
+        {
+            width: 80%;
+            padding: 50px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 70%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)} 
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)} 
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+           display: block;
+           float: none;
+        }
+        .cancelbtn {
+           width: 100%;
+        }
+    }
     </style>
 <body style="background-color:powderblue;">
     
@@ -71,10 +153,43 @@
     <h1 class ="header">&nbsp;&nbsp;OCEAN MOVIES</h1>
     <div style="text-align: right">
     <br>
-    <button type="button" class="btn" onclick="send()">Request Movies/TV Shows</button>
+    <button type="button" class="btn" onclick="document.getElementById('id01').style.display='block'">Request Movies/TV Shows</button>
     &nbsp;&nbsp;
     </div>
     
+    <div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+      
+    </div>
+
+    <div class="container">
+      <label><b>Name:</b></label>
+    <br>
+      <input type="text" placeholder="Enter Your Name" name="uname" required id="name">
+<br>
+      <label><b>Movie/TV Show Name:</b></label>
+    <br>
+      <input  type="text"  placeholder="Enter Movie Or TV Show Name" name="psw" required id="showname">
+    <br>
+        <label><b>Year Released:</b></label>
+    <br>
+    <input  type="text"  placeholder="Enter Year Movie/TV Show was Released" name="psw" required id="year">
+    <br>
+        <label><b>Other Relavant Infomation:</b></label>
+    <br>
+        <input  type="text"  placeholder="Enter Any Other Relavant Information" name="psw" id="option">
+    <br>
+      <button class="btn-primary" onclick ="send()" type="button">Submit</button>
+    <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
     
     
     
@@ -153,6 +268,15 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
     
+    var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 function Movie()
     {
         localStorage.setItem("Entrance",true)
@@ -160,7 +284,14 @@ function Movie()
 
 function send()
     {
-        alert("Not Yet Finished")
+        emailjs.send("default_service","ocean_movie_s_send",{name:document.getElementById("name").value ,  Movie:document.getElementById("showname").value, Year:document.getElementById("year").value, information:document.getElementById("option").value});
+        
+        document.getElementById("name").value=""
+        document.getElementById("showname").value=""
+        document.getElementById("year").value=""
+        document.getElementById("option").value=""
+        document.getElementById("closed").click();
+        alert("Email Sent!")
     }
 localStorage.setItem("Entrance",false)
     </script>
