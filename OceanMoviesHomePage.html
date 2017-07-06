@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<script>
+    if (window.performance) 
+            {
+                console.info("window.performance work's fine on this browser");
+            }
+        if (performance.navigation.type == 1) 
+            {
+                localStorage.setItem("Entrance",true);
+                console.info( "This page is reloaded" );
+            } 
+        else 
+            {
+                console.info( "This page is not reloaded");
+            }
+    
+    function index()
+        {
+            self.location="index.html";
+        }
+    var enter = localStorage.getItem("Entrance")
+    if (enter != "true")
+        {
+            index()
+        }
+</script>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("user_CBiuqLZ6Ri8hfxrHaEVYG");
+           })();
+        </script>
+    </head>
+    <title>Ocean Movies</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    .divider{
+    width:100px;
+    height:auto;
+    display:inline-block;
+        }
+    .btn {padding: 1px 15px;}
+    .btn
+        {
+        cursor: pointer;
+        }
+    .btn:hover 
+        {
+            background-color: white;
+            color: black;
+        }
+    .header 
+        {
+    display: inline-block;
+    float: left;
+        }
+    </style>
+<body style="background-color:powderblue;">
+    
+    
+    
+    <h1 class ="header">&nbsp;&nbsp;OCEAN MOVIES</h1>
+    <div style="text-align: right">
+    <br>
+    <button type="button" class="btn" onclick="send()">Request Movies/TV Shows</button>
+    &nbsp;&nbsp;
+    </div>
+    
+    
+    
+    
+    
+<div class="w3-content w3-display-container" style="max-width:100%">
+        
+   <a href = "Wonder%20Woman.html"><img onclick =Movie() class="mySlides" src="Wonder Woman Poster.jpg" style="width:100%" height="700px"></a>  
+    
+  <a href = "Edge%20Of%20Tomorrow.html"><img onclick =Movie() class="mySlides" src="Edge Of Tomorrow Poster.jpg" style="width:100%" height = "700px"></a>
+    
+  <a href = "Jurassic%20World.html"><img onclick =Movie() class="mySlides" src="Jurrasic%20World%20Poster.png" style="width:100%" height = "700px"></a>
+    
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+    
+<h3> &nbsp;  &nbsp; Latest Movies</h3>
+
+<a href ="Wonder%20Woman.html"><img onclick =Movie() hspace ="100" src="https://cdn.traileraddict.com/content/warner-bros-pictures/wonder-woman-2017-5.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href ="Edge%20Of%20Tomorrow.html"><img onclick =Movie() src="http://www.impawards.com/2014/posters/edge_of_tomorrow_ver10.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="Jurassic%20World.html"><img onclick =Movie() hspace ="100" src="https://s-media-cache-ak0.pinimg.com/736x/07/58/09/07580911df1d10eb43cf6f6b5f9337e6--jurassic-world-poster-jurassic-world-.jpg"  width = "158.4px" height ="234.8px"></a>
+<br>
+<br>
+</body>
+    
+<script>
+    
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000); // Change image every 2 seconds
+    
+}
+    
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+    
+function Movie()
+    {
+        localStorage.setItem("Entrance",true)
+    }
+
+function send()
+    {
+        alert("Not Yet Finished")
+    }
+localStorage.setItem("Entrance",false)
+    </script>
+    
+</html>

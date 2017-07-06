@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
+<script>
+    localStorage.setItem("Entrance", false)
+</script>
+    </head>
+<style>
+form {
+    border: 3px solid #b0e0e6;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body style="background-color:powderblue;">
+
+
+
+
+<form action="/action_page.php">
+<h1>OCEAN MOVIES</h1>
+  <div class="imgcontainer">
+    <img src="OceanLogin.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required id="Username">
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required id="Password">
+        
+    <button onclick ="Login()" type="button">Login</button>
+    <input type="checkbox" class="messageCheckbox" id="Remember"> Remember me
+  </div>
+
+  <div class="container" style="background-color:powderblue;">
+  </div>
+</form>
+</body>
+<script>
+    
+    function Login()
+    {
+        var Username = document.getElementById("Username").value;
+        var Password = document.getElementById("Password").value;
+        var Checked = document.getElementById("Remember").checked;
+        if (Username == "tobinheath" && Password == "011965")
+            {
+                if (Checked ==true)
+                    {
+                        localStorage.setItem("Password", Password);
+                        localStorage.setItem("Username", Username)
+                        localStorage.setItem("Remembered", true)
+                        localStorage.setItem("Entrance", true)
+                    }
+                else
+                    {
+                        localStorage.setItem("Remembered", false)
+                    }
+            
+                self.location="OceanMoviesHomePage.html";
+            }
+
+        else if (Username == "Shenyi Cui" && Password == "1228sc50272")
+            {
+                if (Checked ==true)
+                    {
+                        localStorage.setItem("Password", Password);
+                        localStorage.setItem("Username", Username)
+                        localStorage.setItem("Remembered", true)
+                        localStorage.setItem("Entrance", true)
+                    }
+                else
+                    {
+                        localStorage.setItem("Remembered", false)
+                    }
+                self.location="OceanMoviesHomePage.html";
+            }
+
+        else if (Username == "NicoleCM" && Password == "mooning")
+            {
+                if (Checked ==true)
+                    {
+                        localStorage.setItem("Password", Password);
+                        localStorage.setItem("Username", Username)
+                        localStorage.setItem("Remembered", true)
+                        localStorage.setItem("Entrance", true)
+                    }
+                else
+                    {
+                        localStorage.setItem("Remembered", false)
+                    }
+                self.location="OceanMoviesHomePage.html";
+            }
+        else
+            {
+                alert("Sorry, Invalid Username Or Password")
+            }
+            
+        
+    }
+    
+    
+             var ToF = localStorage.getItem("Remembered")
+            if (ToF == "true")
+                {
+                    var P = localStorage.getItem("Password");
+                    var U = localStorage.getItem("Username");
+                   document.getElementById("Password").value = P
+                    document.getElementById("Username").value = U
+                    document.getElementById("Remember").checked = true;
+
+                }           
+
+    
+    
+    
+</script>
+</html>
