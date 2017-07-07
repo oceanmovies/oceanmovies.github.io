@@ -153,7 +153,7 @@
     <h1 class ="header">&nbsp;&nbsp;OCEAN MOVIES</h1>
     <div style="text-align: right">
     <br>
-    <button type="button" class="btn" onclick="document.getElementById('id01').style.display='block'">Request Movies/TV Shows</button>
+    <button type="button" class="btn" onclick="document.getElementById('id01').style.display='block'; get()">Request Movies/TV Shows</button>
     &nbsp;&nbsp;
     </div>
     
@@ -169,7 +169,11 @@
       <label><b>Name:</b></label>
     <br>
       <input type="text" placeholder="Enter Your Name" name="uname" required id="name">
-<br>
+    <br>
+        <label><b>What Is Your Email:</b></label>
+    <br>
+        <input  type="text"  placeholder="Please Enter Your Email Address So You Can Be Informed When Media Is Uploaded" name="psw" id="email" required>
+    <br>
       <label><b>Movie/TV Show Name:</b></label>
     <br>
       <input  type="text"  placeholder="Enter Movie Or TV Show Name" name="psw" required id="showname">
@@ -201,6 +205,10 @@
   <a href = "Edge%20Of%20Tomorrow.html"><img onclick =Movie() class="mySlides" src="Edge Of Tomorrow Poster.jpg" style="width:100%" height = "700px"></a>
     
   <a href = "Jurassic%20World.html"><img onclick =Movie() class="mySlides" src="Jurrasic%20World%20Poster.png" style="width:100%" height = "700px"></a>
+
+      <a href = "Kong%20Skull%20Island.html"><img onclick =Movie() class="mySlides" src="Kong%20Skull%20Island%20Poster.jpg" style="width:100%" height = "700px"></a>
+
+      <a href = "The%20Fate%20Of%20The%20Furious.html"><img onclick =Movie() class="mySlides" src="Fast%208%20Poster.jpg" style="width:100%" height = "700px"></a>
     
   <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
@@ -208,16 +216,23 @@
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
   </div>
 </div>
     
 <h3> &nbsp;  &nbsp; Latest Movies</h3>
-
-<a href ="Wonder%20Woman.html"><img onclick =Movie() hspace ="100" src="https://cdn.traileraddict.com/content/warner-bros-pictures/wonder-woman-2017-5.jpg"  width = "158.4px" height ="234.8px"></a>
+<center>
+<a href ="Wonder%20Woman.html"><img onclick =Movie() hspace ="85" src="https://cdn.traileraddict.com/content/warner-bros-pictures/wonder-woman-2017-5.jpg"  width = "158.4px" height ="234.8px"></a>
     
 <a href ="Edge%20Of%20Tomorrow.html"><img onclick =Movie() src="http://www.impawards.com/2014/posters/edge_of_tomorrow_ver10.jpg"  width = "158.4px" height ="234.8px"></a>
     
-<a href="Jurassic%20World.html"><img onclick =Movie() hspace ="100" src="https://s-media-cache-ak0.pinimg.com/736x/07/58/09/07580911df1d10eb43cf6f6b5f9337e6--jurassic-world-poster-jurassic-world-.jpg"  width = "158.4px" height ="234.8px"></a>
+<a href="Jurassic%20World.html"><img onclick =Movie() hspace ="85" src="https://s-media-cache-ak0.pinimg.com/736x/07/58/09/07580911df1d10eb43cf6f6b5f9337e6--jurassic-world-poster-jurassic-world-.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="Kong%20Skull%20Island.html"><img onclick =Movie()  src="http://www.impawards.com/2017/posters/kong_skull_island_ver10_xlg.jpg"  width = "158.4px" height ="234.8px"></a>
+    
+<a href="The%20Fate%20Of%20The%20Furious.html"><img onclick =Movie() hspace ="85" src="https://www.cinematerial.com/media/posters/md/7e/7eyyunmd.jpg?v=1492514898"  width = "158.4px" height ="234.8px"></a>
+</center>
 <br>
 <br>
 </body>
@@ -282,16 +297,25 @@ function Movie()
         localStorage.setItem("Entrance",true)
     }
 
+function get()
+    {
+                    document.getElementById("name").value = localStorage.getItem("Name")
+                    document.getElementById("email").value = localStorage.getItem("Email")
+                    
+    }
 function send()
     {
-        emailjs.send("default_service","ocean_movie_s_send",{name:document.getElementById("name").value ,  Movie:document.getElementById("showname").value, Year:document.getElementById("year").value, information:document.getElementById("option").value});
+        localStorage.setItem("Name",document.getElementById("name").value)
+        localStorage.setItem("Email",document.getElementById("email").value)
+        emailjs.send("default_service","ocean_movie_s_send",{name:document.getElementById("name").value, email:document.getElementById("email").value,  Movie:document.getElementById("showname").value, Year:document.getElementById("year").value, information:document.getElementById("option").value});
         
         document.getElementById("name").value=""
         document.getElementById("showname").value=""
+        document.getElementById("email").value=""
         document.getElementById("year").value=""
         document.getElementById("option").value=""
         document.getElementById("closed").click();
-        alert("Email Sent!")
+        alert("Form Submitted!")
     }
 localStorage.setItem("Entrance",false)
     </script>
