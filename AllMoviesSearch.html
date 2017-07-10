@@ -421,7 +421,10 @@ function send()
                     }
                 
             }
-    
+        if (NumOfMov==0)
+        {
+            document.getElementById("SearchText").innerHTML= "  \xa0\xa0\xa0\xa0\xa0 Sorry There Was No Results For: " + localStorage.getItem("searchitem")
+        }
     }
     function look()
     {
