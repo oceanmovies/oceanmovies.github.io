@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <script>
+    if (window.performance) 
+            {
+                console.info("window.performance work's fine on this browser");
+            }
+        if (performance.navigation.type == 1) 
+            {
+                localStorage.setItem("Entrance",true);
+                console.info( "This page is reloaded" );
+            } 
+        else 
+            {
+                console.info( "This page is not reloaded");
+            }
+        
+    function index()
+        {
+            self.location="index.html";
+        }
+    var enter = localStorage.getItem("Entrance")
+    if (enter != "true")
+        {
+            index()
+        }
+</script>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
+    </head>
+    <title>X-Men: Days Of Future Past (2014)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Movies.css">
+    
+    <div class="w3-right">
+          <div class="w3-section">
+          </div>
+          <button class="w3-button demo" onclick="currentDiv(1)">MEP Player</button> 
+          <button class="w3-button demo" onclick="currentDiv(2)">JW Player</button> 
+          <button class="w3-button demo" onclick="currentDiv(3)">GD Player</button>
+       <button class="Home" onclick="document.getElementById('id01').style.display='block'" >Synopsis</button>
+          <button class="Home" onclick = "Home();">Ocean Movies</button>
+             
+           
+    </div>
+    
+    
+    <h1>&nbsp;X-MEN: DAYS OF FUTURE PAST (2014)</h1>
+
+    <body >
+        
+        
+        
+        
+        <div id="id01" class="modal">
+  
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+
+            </div>
+
+            <div class="container">
+              <h1>DAYS OF FUTURE PAST</h1>
+              <h4>Convinced that mutants pose a threat to humanity, Dr. Bolivar Trask (Peter Dinklage) develops the Sentinels, enormous robotic weapons that can detect a mutant gene and zero in on that person. In the 21st century, the Sentinels have evolved into highly efficient killing machines. With mutants now facing extinction, Wolverine (Hugh Jackman) volunteers to go back in time and rally the X-Men of the past to help change a pivotal moment in history and thereby save their future.
+</h4>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+            </div>
+          </form>
+            
+        </div>
+        
+        
+        
+        <div class="w3-content" style="max-width:100%">
+               <div class="mySlides w3-container w3-black">
+          <iframe src="https://gdembed.com/embed.php?lang=en&player=mep&id=pmdlX03uoe" frameborder="0" width="100%" height="700px" scrolling="no" allowfullscreen></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=pmdlX03uoe">Download X-Men:Days Of Future Past LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0B853Xnm3SWCTanBmdllRdVFfM1k">Download X-Men:Days Of Future Past LINK 2</a>
+        </p>
+          </div>
+            
+          <div class="mySlides w3-container w3-black">
+            <iframe src="https://gdembed.com/embed.php?lang=en&player=jwp&id=pmdlX03uoe" frameborder="0" width="100%" height="700px" scrolling="no" allowfullscreen></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=pmdlX03uoe">Download X-Men:Days Of Future Past LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0B853Xnm3SWCTanBmdllRdVFfM1k">Download X-Men:Days Of Future Past LINK 2</a>
+        </p>
+          </div>
+            
+        <div class="mySlides w3-container w3-black">
+            <iframe src="https://drive.google.com/file/d/0B853Xnm3SWCTanBmdllRdVFfM1k/preview" frameborder="0" width="100%" height="700px"></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=pmdlX03uoe">Download X-Men:Days Of Future Past LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0B853Xnm3SWCTanBmdllRdVFfM1k">Download X-Men:Days Of Future Past LINK 2</a>
+        </p>
+          </div>
+            
+        </div>
+        
+        
+        
+
+    </body>
+    
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+             dots[i].className = dots[i].className.replace(" w3-red", "");
+          }
+          x[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " w3-red";
+        }
+        
+            function Home()
+            {
+                localStorage.setItem("Entrance",true)
+                self.location="OceanMoviesHomePage.html";
+            }
+        var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+        localStorage.setItem("Entrance",false)
+    </script>
+</html>
