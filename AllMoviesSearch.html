@@ -212,7 +212,7 @@
     <div id="main">
     <div style="text-align: right" id="menu">
     
-    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()">Request Movies/TV Shows</a>
+    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Movies/TV Shows</a>
         <a class="button" onclick="home()">Home</a>
          <a class="button" onclick="document.getElementById('id02').style.display='block'">Search</a>
     
@@ -220,7 +220,7 @@
     </div>
     <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
       
@@ -263,7 +263,7 @@
     
     <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
       
@@ -315,7 +315,36 @@
      <a href="Days%20Of%20Future%20Past.html"><img style="border: 1px solid black;" id=10 onclick =Movie()  class="movpost xmen xmendaysoffuturepast daysoffuturepast" src="http://www.heyuguys.com/images/2014/04/X-Men-The-Days-of-Future-Past-Poster-1.jpg"  width = "158.4px" height ="234.8px"></a>
    </div>    
 </center>
-
+    
+    <h3 id = tvshow> &nbsp;  &nbsp; &nbsp; Latest TV Shows</h3>
+<center>
+<div class="borders" id=border2>
+    
+<a href ="The%20Office%20Season%201.html"><img style="border: 1px solid black;" onclick =Movie() hspace ="72.5" src="https://s-media-cache-ak0.pinimg.com/originals/64/00/f5/6400f5ea275779e09884661e2a386341.jpg"  width = "158.4px" height ="234.8px" class="movpost theoffice" id=11></a>
+    
+<a href ="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" src="http://www.hollywoodreporter.com/sites/default/files/2011/03/got_-_official_poster.jpg"  width = "158.4px" height ="234.8px" class="agameofthrones gameofthrones movpost" id=12></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" hspace ="72.5" src="https://images-na.ssl-images-amazon.com/images/I/51Y%2Bm%2BlGdAL._SY450_.jpg"  width = "158.4px" height ="234.8px"id=13 class="parksandrecreation parksandrec movpost"></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=14></a>
+    
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=15></a>
+    
+<br>
+<br>
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=16></a>
+   
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=17></a>
+    
+    <a  href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=18></a>
+    
+    <a href="#"><img  style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=19></a>
+    
+     <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=20></a>
+    
+    
+    </div>
+</center>
 <br>
 <br>
 </body>
@@ -323,6 +352,7 @@
 <script>
 var allmov = document.getElementsByTagName("a").length;
 allmov=allmov-3
+
 for(i = 1; i < allmov+1; i++)
     {
  var x = document.getElementById(i)  
@@ -335,6 +365,7 @@ if (localStorage.getItem("hide")=="true")
     }
 if (localStorage.getItem("hide")=="true")
     {
+        document.getElementById("tvshow").innerHTML= ""
         find()
     }
 
@@ -401,6 +432,7 @@ function send()
    searchitem=searchitem.toLowerCase();
     searchitem=searchitem.replace(/ /g,'')
    var NumOfMov= document.querySelectorAll('#border .'+searchitem).length;
+        
         var movtitle = document.getElementById("border").querySelectorAll("."+searchitem);
         var inum = 0
         var tnum = 0 
@@ -422,8 +454,29 @@ function send()
                     }
                 
             }
+        var dontdoit = NumOfMov
+        var NumOfMov= document.querySelectorAll('#border2 .'+searchitem).length;
+        var movtitle = document.getElementById("border2").querySelectorAll("."+searchitem);
+        for (i = 0; i < NumOfMov; i++)
+            {
+                
+                movtitle[i].style.display='block';
+                var percent = 4.25+inum
+                var percent2 = 22.5+tnum
+                var PtS2 = percent2.toString();
+                var PtS= percent.toString();
+                movtitle[i].style.left=PtS+"%"
+                movtitle[i].style.top=PtS2+"%"
+                inum=inum+20
+                if(percent>71)
+                    {
+                        tnum=tnum+30
+                        inum=0
+                    }
+                
+            }
         
-        if (NumOfMov==0)
+        if (dontdoit==0&&NumOfMov==0)
         {
             document.getElementById("SearchText").innerHTML= "  \xa0\xa0\xa0\xa0\xa0 Sorry There Was No Results For: " + localStorage.getItem("searchitem")
         }
@@ -434,8 +487,15 @@ function send()
         localStorage.setItem("hide",true)
         location.reload();
     }
+    function clickonrq()
+    {
+        document.getElementById("request").click();
+    }
     
-    
+        function ComingSoon()
+    {
+        alert("Coming Soon")
+    }
 localStorage.setItem("Entrance",false)
 localStorage.setItem("hide",false)
     </script>

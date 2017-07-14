@@ -70,14 +70,72 @@ span.psw {
        width: 100%;
     }
 }
+.button {
+    background-color: #e7e7e7; /* Green */
+    
+    border: 1px solid black;
+    color: black;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    float:right;
+    -moz-transition: 1s linear;
+    -ms-transition: 1s linear;
+    -o-transition: 1s linear;
+    -webkit-transition: 1s linear;
+    transition: 1s linear;
+    font-size: 16px;
+    
+}
+    .button
+        {
+        cursor: pointer;
+        }
+    .button:hover 
+        {
+            border: 1px solid white;
+            background-color: white;
+            color: black;
+        }
+
 </style>
+<link rel="stylesheet" href="Movies.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div id="main">
+    <div style="text-align: right" id="menu">
+        <a  class="button" onclick="document.getElementById('id01').style.display='block';">OCEAN MOVIES NEWS</a>
+        &nbsp;
+    </div>
+</div>
+    
 <body style="background-color:aliceblue;">
 
+        <div id="id01" class="modal">
+  
+          <form class="modal-content animate">
+            
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
 
+            
 
+            <div class="container">
+              <h2 >LATEST UPDATE NOTES</h2>
+              <h4>-Added TV Shows Section<br>-Search Bar<br>-Page Redesign<br>-Slide Show Pictures Changed<br>-Used Captions </h4>
+            <h2>UPCOMING SHOWS:</h2>
+                <h4>-Game Of Thrones (New Episodes Every Week)<br>
+                -Parks And Recreation</h4>
+            
+                <h2>NEW MOVIES/TV SHOWS EVERY 2 DAYS, PLEASE REQUEST</h2>
+            </div>
 
-<form action="/action_page.php">
-<h1>OCEAN MOVIES</h1>
+            <div class="container" style="background-color:#f1f1f1">
+            </div>
+          </form>
+    </div>
+
+<h1 class ="header">OCEAN MOVIES</h1>
   <div class="imgcontainer">
     <img src="OceanLogin.jpg" alt="Avatar" class="avatar">
   </div>
@@ -95,7 +153,7 @@ span.psw {
 
   <div class="container" style="background-color:aliceblue;">
   </div>
-</form>
+
 </body>
 <script>
     
@@ -158,7 +216,7 @@ span.psw {
                 self.location="OceanMoviesHomePage.html";
             }
         
-        else if (Username == "awesomeme" && Password == "ottersrule")
+        else if (Username == "guest" && Password == "ottersrg8")
             {
                 if (Checked ==true)
                     {
@@ -171,7 +229,7 @@ span.psw {
                     {
                         localStorage.setItem("Remembered", false)
                     }
-                localStorage.setItem("Name","Issy Elliot")
+                localStorage.setItem("Name","Guest User(Enter Name Please)")
                 localStorage.setItem("Entrance", true)
                 self.location="OceanMoviesHomePage.html";
             }
@@ -196,7 +254,14 @@ span.psw {
                 }           
 
     
-    
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
     
 </script>
 </html>
