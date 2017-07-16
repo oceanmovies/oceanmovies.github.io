@@ -132,7 +132,15 @@
         font-size: 35px;
         font-weight: bold;
     }
-
+    .select
+        {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
     .close:hover,
     .close:focus {
         color: red;
@@ -211,8 +219,10 @@
     <h1 class ="header">&nbsp;&nbsp;OCEAN MOVIES</h1>
     <div id="main">
     <div style="text-align: right" id="menu">
-    
-    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request Movies/TV Shows</a>
+        
+    <a class="button" onclick="index()">Log Out</a>
+    <a class="button" onclick="document.getElementById('id03').style.display='block'; currentplay()" >Change Default Media Player</a>
+    <a  class="button" onclick="document.getElementById('id01').style.display='block'; get()" id=request>Request</a>
         <a class="button" onclick="home()">Home</a>
          <a class="button" onclick="document.getElementById('id02').style.display='block'">Search</a>
     
@@ -285,7 +295,38 @@
     </div>
   </form>
 </div>
+   
+         <div id="id03" class="modal">
+  
+  <form class="modal-content animate" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+      
+    </div>
+
+    <div class="container">
+    <br>
+      <label><b>Change Current Default Media Player</b></label>
+    <br>
     
+    <h4 id="currentplayer">hello</h4>
+    <select class="select" id="playerop">
+        <option selected disabled hidden>Choose here</option>
+      <option value="JW Player">JW Player</option>
+      <option value="MEP Player">MEP Player</option>
+      <option value="GD Player">GD Player</option>
+    </select>
+    <br>
+      <button  class="buttonSearch" onclick ="PlayerOpChange()" type="button" >Confirm</button>
+    <br>
+        
+    <br>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    </div>
+  </form>
+</div>
     
 <br><br>
     
@@ -320,9 +361,9 @@
 <center>
 <div class="borders" id=border2>
     
-<a href ="The%20Office%20Season%201.html"><img style="border: 1px solid black;" onclick =Movie() hspace ="72.5" src="https://s-media-cache-ak0.pinimg.com/originals/64/00/f5/6400f5ea275779e09884661e2a386341.jpg"  width = "158.4px" height ="234.8px" class="movpost theoffice" id=11></a>
+<a href ="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultPTheOffice();" hspace ="72.5" src="https://s-media-cache-ak0.pinimg.com/originals/64/00/f5/6400f5ea275779e09884661e2a386341.jpg"  width = "158.4px" height ="234.8px" class="movpost theoffice" id=11></a>
     
-<a href ="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" src="http://www.hollywoodreporter.com/sites/default/files/2011/03/got_-_official_poster.jpg"  width = "158.4px" height ="234.8px" class="agameofthrones gameofthrones movpost" id=12></a>
+<a href ="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultPGOT();" src="http://www.hollywoodreporter.com/sites/default/files/2011/03/got_-_official_poster.jpg"  width = "158.4px" height ="234.8px" class="agameofthrones gameofthrones movpost" id=12></a>
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" hspace ="72.5" src="https://images-na.ssl-images-amazon.com/images/I/51Y%2Bm%2BlGdAL._SY450_.jpg"  width = "158.4px" height ="234.8px"id=13 class="parksandrecreation parksandrec movpost"></a>
     
@@ -351,7 +392,7 @@
     
 <script>
 var allmov = document.getElementsByTagName("a").length;
-allmov=allmov-3
+allmov=allmov-5
 
 for(i = 1; i < allmov+1; i++)
     {
@@ -496,6 +537,59 @@ function send()
     {
         alert("Coming Soon")
     }
+        function currentplay()
+    {
+
+        document.getElementById("currentplayer").innerHTML= "Your Current Player Is: " + localStorage.getItem("CurrentPlayer")
+    }
+    function PlayerOpChange()
+    {
+        var e = document.getElementById("playerop");
+        var e = e.options[e.selectedIndex].value; 
+        if (e!="Choose here")
+            {
+        localStorage.setItem("CurrentPlayer", e );
+        document.getElementById("currentplayer").innerHTML= "Your Current Player Is: " + localStorage.getItem("CurrentPlayer")
+            }
+    }
+    function DefaultPTheOffice()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="\The%20Office\/The%20Office%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="\The%20Office\/The%20Office%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="\The%20Office\/The%20Office%20Season%201%20MEP.html";
+        }
+    }
+        function DefaultPGOT()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="GOT\/Game%20Of%20Thrones%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="GOT\/Game%20Of%20Thrones%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="GOT\/Game%20Of%20Thrones%20Season%201%20MEP.html";
+        }
+    }
+    var modal = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 localStorage.setItem("Entrance",false)
 localStorage.setItem("hide",false)
     </script>

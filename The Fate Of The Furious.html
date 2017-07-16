@@ -138,6 +138,15 @@
             modal.style.display = "none";
         }
     }
+                    if(localStorage.getItem("CurrentPlayer")=="JW Player")
+               {
+                    
+                    currentDiv(2);  
+               }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+            {
+                currentDiv(3)
+            }
         localStorage.setItem("Entrance",false)
     </script>
 </html>
