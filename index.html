@@ -1,10 +1,12 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Login</title>
         <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
 <script>
-    localStorage.setItem("Entrance", false)
+localStorage.setItem("Entrance", false)
+    
+
+
 </script>
     </head>
 <style>
@@ -118,7 +120,7 @@ span.psw {
             
               <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
 
-            
+        
 
             <div class="container">
               <h2 >LATEST UPDATE NOTES</h2>
@@ -233,6 +235,23 @@ span.psw {
                 localStorage.setItem("Entrance", true)
                 self.location="OceanMoviesHomePage.html";
             }
+        else if (Username == "Helena Bai" && Password == "1028hamster")
+            {
+                if (Checked ==true)
+                    {
+                        localStorage.setItem("Password", Password);
+                        localStorage.setItem("Username", Username)
+                        localStorage.setItem("Remembered", true)
+                        
+                    }
+                else
+                    {
+                        localStorage.setItem("Remembered", false)
+                    }
+                localStorage.setItem("Name","Guest User(Enter Name Please)")
+                localStorage.setItem("Entrance", true)
+                self.location="OceanMoviesHomePage.html";
+            }
         
         else if (Username == "guest" && Password == "ottersrg8")
             {
@@ -279,7 +298,10 @@ span.psw {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
+                
             }
-    
+            
+            
 </script>
+
 </html>

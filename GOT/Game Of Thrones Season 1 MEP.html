@@ -43,13 +43,6 @@
             <a href="Game%20Of%20Thrones%20Season%201%20JW.html" onclick="Movie()">JW PLAYER</a>
             </div>
         </div>
-        <div class="dropdown2">
-            <button class="dropbtn2" onclick = "myFunction2()">Current Player: MEP</button>  
-            <div id="myDropdown2" class="dropdown-content2">
-            <a href="Game%20Of%20Thrones%20Season%201%20GD.html" onclick="Movie()">GD PLAYER</a>
-            <a href="Game%20Of%20Thrones%20Season%201%20JW.html" onclick="Movie()">JW PLAYER</a>
-            </div>
-        </div>
         <div class="dropdown">
             <button class="dropbtn" onclick = "myFunction()">Pick Season</button>  
             <div id="myDropdown" class="dropdown-content">
@@ -221,7 +214,7 @@
           var dots = document.getElementsByClassName("demo");
           if (n > x.length) {slideIndex = 1}    
           if (n < 1) {slideIndex = x.length}
-          if (n==1 || n==8 || n==15){hideone()}
+          if (n==1){hideone()}
             
           else 
           {
@@ -229,7 +222,7 @@
              prevbtn.style.display='block'
           }
             
-          if (n==7 || n==14 || n==21){hidetwo()}
+          if (n==10){hidetwo()}
           else   
           {
             var nextbtn = document.getElementById("nextbtn")

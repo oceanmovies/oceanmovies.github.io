@@ -450,7 +450,7 @@
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" hspace ="72.5" src="https://images-na.ssl-images-amazon.com/images/I/51Y%2Bm%2BlGdAL._SY450_.jpg"  width = "158.4px" height ="234.8px"></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=14></a>
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultConviction();"  src="http://cdn-static.sidereel.com/tv_shows/59250/giant_2x/311878-2.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=14></a>
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=15></a>
     
@@ -639,6 +639,21 @@ function send()
         else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
         {
             self.location="GOT\/Game%20Of%20Thrones%20Season%201%20MEP.html";
+        }
+    }
+            function DefaultConviction()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="Conviction\/Conviction%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="Conviction\/Conviction%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="Conviction\/Conviction%20Season%201%20MEP.html";
         }
     }
 localStorage.setItem("Entrance",false)
