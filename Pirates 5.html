@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <script>
+    if (window.performance) 
+            {
+                console.info("window.performance work's fine on this browser");
+            }
+        if (performance.navigation.type == 1) 
+            {
+                localStorage.setItem("Entrance",true);
+                console.info( "This page is reloaded" );
+            } 
+        else 
+            {
+                console.info( "This page is not reloaded");
+            }
+        
+    function index()
+        {
+            self.location="index.html";
+        }
+    var enter = localStorage.getItem("Entrance")
+    if (enter != "true")
+        {
+            index()
+        }
+</script>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="Play%20Button.ico" />
+    </head>
+    <title>Pirates of the Caribbean: Dead Men Tell No Tales (2017)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Movies.css">
+    
+    <div class="w3-right">
+          <div class="w3-section">
+          </div>
+          <button class="w3-button demo" onclick="currentDiv(1)">MEP Player</button> 
+          <button class="w3-button demo" onclick="currentDiv(2)">JW Player</button> 
+          <button class="w3-button demo" onclick="currentDiv(3)">GD Player</button>
+        <button class="light" onclick = "lightOff();" id="light">Turn Lights:OFF</button>
+       <button class="Home" onclick="document.getElementById('id01').style.display='block'" >Synopsis</button>
+          <button class="Home" onclick = "Home();">Ocean Movies</button>
+             
+           
+    </div>
+    
+    
+    <h1>&nbsp;DEAD MEN TELL NO TALES (2017)</h1>
+
+    <body >
+        
+        
+        
+        
+        <div id="id01" class="modal">
+  
+          <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" id="closed">&times;</span>
+
+            </div>
+
+            <div class="container">
+              <h1>DEAD MEN TELL NO TALES</h1>
+              <h4>The treacherous Captain Salazar and his crew of ghost pirates are back for revenge. Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, a mythical artefact that grants whoever holds it control over the oceans.</h4>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+            </div>
+          </form>
+            
+        </div>
+        
+        
+        
+        <div class="w3-content" style="max-width:100%">
+            
+          <div class="mySlides w3-container w3-black">
+            <iframe src="https://gdembed.com/embed.php?lang=en&player=mep&id=O1WyjoLe2v" frameborder="0" width="100%" height="700px" scrolling="no" allowfullscreen></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=O1WyjoLe2v">Download Dead Men Tell No Tales LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0BzDpLRKkYASHM2hndkdNVll5YkE">Download Dead Men Tell No Tales LINK 2</a>
+        </p>
+          </div>
+            
+          <div class="mySlides w3-container w3-black">
+            <iframe src="https://gdembed.com/embed.php?lang=en&player=jwp&id=O1WyjoLe2v" frameborder="0" width="100%" height="700px" scrolling="no" allowfullscreen></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=O1WyjoLe2v">Download Dead Men Tell No Tales LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0BzDpLRKkYASHM2hndkdNVll5YkE">Download Dead Men Tell No Tales LINK 2</a>
+        </p>
+          </div>
+            
+        <div class="mySlides w3-container w3-black">
+            <iframe src="https://drive.google.com/file/d/0BzDpLRKkYASHM2hndkdNVll5YkE/preview" frameborder="0" width="100%" height="700px"allowfullscreen></iframe>
+            <p  style="color:white;"> Please Switch To A Different Player If One Doesn't Work <a href="https://gdembed.com/dload.php?lang=en&id=5agyMGcz7k">Download Dead Men Tell No Tales LINK 1</a> <a>&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="https://drive.google.com/uc?export=download&id=0BzDpLRKkYASHM2hndkdNVll5YkE">Download Dead Men Tell No Tales LINK 2</a>
+        </p>
+          </div>
+            
+        </div>
+        
+        
+        
+
+    </body>
+    
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+             dots[i].className = dots[i].className.replace(" w3-red", "");
+          }
+          x[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " w3-red";
+        }
+        
+            function Home()
+            {
+                localStorage.setItem("Entrance",true)
+                self.location="OceanMoviesHomePage.html";
+            }
+        var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+                    if(localStorage.getItem("CurrentPlayer")=="JW Player")
+               {
+                    
+                    currentDiv(2);  
+               }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+            {
+                currentDiv(3)
+            }
+        var lights = true
+        function lightOff()
+        {   
+                var HomeElement = document.querySelectorAll('.Home');
+                for (var i = 0; i < HomeElement.length; i++)
+                    {
+                        HomeElement[i].id = 'Home-' + i;
+                        var element = document.getElementById('Home-' + i)
+                        var color= window.getComputedStyle(element, null).getPropertyValue("background-color");
+                        var a = color.split("(")[1].split(")")[0];
+                        a = a.split(",");
+                        var b = a.map(function(x){                      //For each array element
+                            x = parseInt(x).toString(16);      //Convert to a base16 string
+                            return (x.length==1) ? "0"+x : x; //Add zero if we get only one character
+                        });
+                        b = "0x"+b.join("");
+                        var opposite= ('000000' + (('0xffffff' ^ b).toString(16))).slice(-6)
+
+                        document.getElementById("Home-"+i).style.backgroundColor="#"+opposite
+                    }
+
+            if (lights == false)
+                {
+                    
+                    var changeplayer = document.querySelectorAll('.demo');
+                    for(var i = 0; i < changeplayer.length; i++)
+                    {
+                        changeplayer[i].id = 'player'+i;
+                        document.getElementById('player'+i).style.color ="black"
+                    }
+                    document.getElementById("light").innerHTML="Turn Lights:OFF"
+                    document.body.style.backgroundColor = "aliceblue";
+                    document.getElementById("light").style.backgroundColor = "yellow";
+                    document.getElementById("light").style.color = 'black';
+                    lights=true
+                    var h1Elements = document.getElementsByTagName("h1");
+                    for(var i = 0; i < h1Elements.length; i++) 
+                    {
+                           h1Elements[i].style.color = "black";
+                    }
+                    var h1Elements = document.getElementsByTagName("h3");
+                    for(var i = 0; i < h1Elements.length; i++) 
+                    {
+                           h1Elements[i].style.color = "black";
+                    }
+                }
+            else
+                {
+                    var changeplayer = document.querySelectorAll('.demo');
+                    for(var i = 0; i < changeplayer.length; i++)
+                    {
+                        changeplayer[i].id = 'player'+i;
+                        document.getElementById('player'+i).style.color ="white"
+                    }
+                    document.getElementById("light").innerHTML="Turn Lights:ON"
+                    document.body.style.backgroundColor = "black";   
+                    document.getElementById("light").style.backgroundColor = "#191970";
+                    document.getElementById("light").style.color = 'white';
+                    lights=false
+                    var h1Elements = document.getElementsByTagName("h1");
+                    for(var i = 0; i < h1Elements.length; i++) 
+                    {
+                           h1Elements[i].style.color = "white";
+                    }
+                    var h1Elements = document.getElementsByTagName("h3");
+                    for(var i = 0; i < h1Elements.length; i++) 
+                    {
+                           h1Elements[i].style.color = "white";
+                    }
+                    
+                }
+        }
+        localStorage.setItem("Entrance",false)
+    </script>
+</html>

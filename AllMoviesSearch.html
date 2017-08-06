@@ -354,6 +354,17 @@
     <a href="Logan.html"><img  style="border: 1px solid black;" id=9 onclick =Movie() class="movpost logan xmen" src="https://cdn.traileraddict.com/content/20th-century-fox/logan-2017-poster-2.jpg" hspace ="72.5"  width = "158.4px" height ="234.8px"></a>
     
      <a href="Days%20Of%20Future%20Past.html"><img style="border: 1px solid black;" id=10 onclick =Movie()  class="movpost xmen xmendaysoffuturepast daysoffuturepast" src="http://www.heyuguys.com/images/2014/04/X-Men-The-Days-of-Future-Past-Poster-1.jpg"  width = "158.4px" height ="234.8px"></a>
+    <br><br>
+    <a href="The%20Mummy%20(2017).html"><img style="border: 1px solid black;" id=21 onclick =Movie()  class="movpost themummy" src="http://www.impawards.com/2017/posters/mummy_ver3_xlg.jpg"  width = "158.4px" height ="234.8px" hspace ="72.5"></a>
+    
+    <a href="Lucy%20(2014).html"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="https://s-media-cache-ak0.pinimg.com/originals/bf/e9/42/bfe942ba4cf56e3a2e758331827d8a8e.jpg"  width = "158.4px" height ="234.8px" class="movpost lucy" id=22></a>
+    
+    <a href="Pirates%205.html"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="http://cdn2-www.superherohype.com/assets/uploads/gallery/pirates-of-the-caribbean-dead-men-tell-no-tales/18192998_661250467417506_7754737169370615427_o.jpg"  width = "158.4px" height ="234.8px" class="movpost deadmentellnotales piratesofthecaribbean5 piratesofthecaribbean piratesofthecaribbeandeadmentellnotales pirates" id=23 hspace ="72.5"></a>
+    
+    <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=24></a>
+    
+    <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();"  src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=25 hspace ="72.5"></a>
+
    </div>    
 </center>
     
@@ -365,7 +376,7 @@
     
 <a href ="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultPGOT();" src="http://www.hollywoodreporter.com/sites/default/files/2011/03/got_-_official_poster.jpg"  width = "158.4px" height ="234.8px" class="agameofthrones gameofthrones movpost" id=12></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); ComingSoon()" hspace ="72.5" src="https://images-na.ssl-images-amazon.com/images/I/51Y%2Bm%2BlGdAL._SY450_.jpg"  width = "158.4px" height ="234.8px"id=13 class="parksandrecreation parksandrec movpost"></a>
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultParks()" hspace ="72.5" src="https://images-na.ssl-images-amazon.com/images/I/51Y%2Bm%2BlGdAL._SY450_.jpg"  width = "158.4px" height ="234.8px"id=13 class="parksandrecreation parksandrec movpost"></a>
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultConviction();"  src="http://cdn-static.sidereel.com/tv_shows/59250/giant_2x/311878-2.jpg"  width = "158.4px" height ="234.8px" class="movpost conviction" id=14></a>
     
@@ -595,6 +606,21 @@ function send()
         else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
         {
             self.location="Conviction/Conviction%20Season%201%20MEP.html";
+        }
+    }
+                function DefaultParks()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="Parks&Rec\/ParksNRec%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="Parks&Rec\/ParksNRec%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="Parks&Rec\/ParksNRec%20Season%201%20MEP.html";
         }
     }
     var modal = document.getElementById('id03');

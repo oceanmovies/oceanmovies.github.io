@@ -15,7 +15,7 @@ div.borders {
 .mySlides {display:none}
     .Home {background-color:#81A594;}
     .Home {border: none;
-    padding: 7px 25px;
+    padding: 7px 15px;
     }
     
     
@@ -201,7 +201,7 @@ div.borders {
         border: 2px solid black;
 }
     .dropbtn2 {
-    padding: 5px 25px;
+    padding: 5px 15px;
     }
     
     
@@ -214,3 +214,23 @@ div.borders {
             background-color: white;
             color: black;
         }
+
+ .light
+{
+    background-color:yellow;
+    border: none;
+    padding: 7px 15px;
+    margin: 0.07cm
+}
+
+.light
+        {
+        cursor: pointer;
+        }
+.light:hover 
+        {
+            background-color: white;
+            color: black;
+            
+        }
+
