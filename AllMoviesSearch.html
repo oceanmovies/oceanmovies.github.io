@@ -380,7 +380,7 @@
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultConviction();"  src="http://cdn-static.sidereel.com/tv_shows/59250/giant_2x/311878-2.jpg"  width = "158.4px" height ="234.8px" class="movpost conviction" id=14></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=15></a>
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultRick();" hspace ="72.5" src="https://s-media-cache-ak0.pinimg.com/originals/e6/6c/39/e66c394e4c67ab7796711b2a51f10b31.jpg"  width = "158.4px" height ="234.8px" class="movpost rickandmorty" id=15></a>
     
 <br>
 <br>
@@ -621,6 +621,21 @@ function send()
         else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
         {
             self.location="Parks&Rec\/ParksNRec%20Season%201%20MEP.html";
+        }
+    }
+    function DefaultRick()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20MEP.html";
         }
     }
     var modal = document.getElementById('id03');

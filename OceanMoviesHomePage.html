@@ -339,6 +339,26 @@
 <div class="w3-content w3-display-container" style="max-width:100%">
     
             <div class="mySlides">
+                      <a href =#><img onclick ="Movie(); DefaultRick();"  src="http://www.imgbase.info/images/safe-wallpapers/cartoons/rick_and_morty/55945_rick_and_morty.jpg" style="width:100%" height = "700px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+              Rick And Morty
+                </div>
+        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                Click To Watch
+                </div>
+          </div>
+    
+        <div class="mySlides ">
+              <a href = #><img onclick ="Movie() DefaultPGOT()"  src="https://images5.alphacoders.com/637/thumb-1920-637668.jpg" style="width:100%" height = "700px"></a>
+                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                Game Of Thrones
+                </div>
+        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                Click To Watch
+                </div>
+          </div>
+    
+            <div class="mySlides">
                       <a href = "Pirates%205.html"><img onclick =Movie()  src="http://www.insidethemagic.net/wp-content/uploads/2017/05/piratesofthecaribbean_header_v5_6489f07c.jpg" style="width:100%" height = "700px"></a>
                 <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
                 Dead Men Tell No Tales
@@ -357,27 +377,7 @@
                 Click To Watch
                 </div>
           </div>    
-    
-        <div class="mySlides">
-                      <a href = "Lucy%20(2014).html"><img onclick =Movie()  src="https://img-s2.onedio.com/id-553e3e61016bcdf20d54ed2f/rev-0/raw/s-a879af62c77ea5726bb6c2e9afb0777c1966e45f.jpg" style="width:100%" height = "700px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-              Lucy
-                </div>
-        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
-                Click To Watch
-                </div>
-          </div>
-    
-    <div class="mySlides ">
-              <a href = #><img onclick ="Movie() DefaultPGOT()"  src="https://images5.alphacoders.com/637/thumb-1920-637668.jpg" style="width:100%" height = "700px"></a>
-                <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-                Game Of Thrones
-                </div>
-        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
-                Click To Watch
-                </div>
-          </div>
-    
+  
     <div class="mySlides">           
              <a href = "#"><img onclick ="Movie() DefaultPTheOffice()"  src="https://images8.alphacoders.com/420/420119.jpg" style="width:100%" height="700px" ></a> 
         <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
@@ -449,7 +449,7 @@
     
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultConviction();"  src="http://cdn-static.sidereel.com/tv_shows/59250/giant_2x/311878-2.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=14></a>
     
-<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace ="72.5" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=15></a>
+<a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultRick();" hspace ="72.5" src="https://s-media-cache-ak0.pinimg.com/originals/e6/6c/39/e66c394e4c67ab7796711b2a51f10b31.jpg"  width = "158.4px" height ="234.8px" class="movpost rickandmorty" id=15></a>
     
 <br>
 <br>
@@ -666,6 +666,22 @@ function send()
         else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
         {
             self.location="Parks&Rec\/ParksNRec%20Season%201%20MEP.html";
+        }
+    }
+    
+    function DefaultRick()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="Rick%20And%20Morty\/Rick%20And%20Morty%20Season%201%20MEP.html";
         }
     }
 localStorage.setItem("Entrance",false)
