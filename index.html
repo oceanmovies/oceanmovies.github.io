@@ -306,18 +306,39 @@ span.psw {
                 
             }
             
+            
+    
+    
             document.onkeydown = function (e) {
             e = e || window.event;//Get event
             if (e.ctrlKey) {
                 var c = e.which || e.keyCode;//Get key code
                 switch (c) {
-                    case 83://Block Ctrl+S
+                    case 83://Block Ctrl+Sv 
                         e.preventDefault();     
                         e.stopPropagation();
                     break;
                 }
             }
-        };
+                if (e.ctrlKey && 
+                    (e.keyCode === 67 || 
+                     e.keyCode === 86 || 
+                     e.keyCode === 85 || 
+                     e.keyCode === 117)) {
+                    return false;
+                }
+                         
+                else if (e.keyCode===123 || e.keyCode===73)
+                    {
+                        return false;
+                    }
+                else {
+                    return true;
+                }
+                };
+
+    
+     
             
 </script>
 
