@@ -309,33 +309,47 @@ span.psw {
             
     
     
-            document.onkeydown = function (e) {
-            e = e || window.event;//Get event
-            if (e.ctrlKey) {
-                var c = e.which || e.keyCode;//Get key code
-                switch (c) {
-                    case 83://Block Ctrl+Sv 
-                        e.preventDefault();     
-                        e.stopPropagation();
-                    break;
-                }
-            }
-                if (e.ctrlKey && 
-                    (e.keyCode === 67 || 
-                     e.keyCode === 86 || 
-                     e.keyCode === 85 || 
-                     e.keyCode === 117)) {
-                    return false;
-                }
-                         
-                else if (e.keyCode===123 || e.keyCode===73)
+            document.onkeydown = function (e)
+            {
+                if(e.keyCode===123)
                     {
                         return false;
                     }
-                else {
-                    return true;
-                }
-                };
+                else if(e.ctrlKey && (e.keyCode === 67 ||e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117))
+                    {
+                        return false;
+                    }
+                else if(e.shiftKey && e.ctrlKey && (e.keyCode===73||e.keyCode===74||e.keyCode===67))
+                    {
+                        return false;
+                    }
+        
+                else if (e.ctrlKey && e.keyCode===83)
+                    {
+                        return false;
+                    }
+                else if ((e.keyCode===91 || e.keyCode===93||e.keyCode===224|| e.keyCode===17) && e.keyCode===83)
+                    {
+                        return false;
+                    }
+                else if ((e.keyCode===91 || e.keyCode===93||e.keyCode===224|| e.keyCode===17) && e.keyCode===85)
+                    {
+                        return false;
+                    }
+                else if ((e.keyCode===91 || e.keyCode===93||e.keyCode===224|| e.keyCode===17) && e.keyCode===18 && (e.keyCode===73||e.keyCode===74))
+                    {
+                        return false;
+                    }
+                else if ((e.keyCode===91 || e.keyCode===93||e.keyCode===224|| e.keyCode===17) && e.keyCode===16 && e.keyCode===67)
+                    {
+                        return false;
+                    }
+                else
+                    {
+                        return true;
+                    }
+            }
+            
 
     
      
