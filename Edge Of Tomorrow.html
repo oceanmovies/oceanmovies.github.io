@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <script>
+                window.onbeforeunload = function (e) {
+    localStorage.setItem("Entrance",true);
+}
         if (window.performance) 
             {
                 console.info("window.performance work's fine on this browser");
