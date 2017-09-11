@@ -384,6 +384,15 @@ input[type=searchtext]:focus {
     
     
 <div class="w3-content w3-display-container" style="max-width:100%">
+        <div class="mySlides">           
+             <a href = "#"><img onclick ="DefaultDaredevil()"  src="FrontPgPics/daredevil.jpg" style="width:100%" height="500px" ></a> 
+        <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                Daredevil
+                </div>
+        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                Click To Watch
+                </div>
+          </div>
     
                 <div class="mySlides">
                       <a href = "#"><img onclick ="Movie(); DefaultDefender();" src="FrontPgPics/Defenders.jpg" style="width:100%" height = "500px"></a>
@@ -405,15 +414,7 @@ input[type=searchtext]:focus {
                 </div>
           </div>    
   
-    <div class="mySlides">           
-             <a href = "The%20Great%20Wall.html"><img onclick ="Movie()"  src="FrontPgPics/The%20Great%20Wall.jpg" style="width:100%" height="500px" ></a> 
-        <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-                The Great Wall
-                </div>
-        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
-                Click To Watch
-                </div>
-          </div>
+
     
             <div class="mySlides">
                       <a href =#><img onclick ="Movie(); DefaultRick();"  src="FrontPgPics/Rick%20And%20Morty.jpg" style="width:100%" height = "500px"></a>
@@ -501,7 +502,7 @@ input[type=searchtext]:focus {
    
 <a href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultDefender();"  hspace="4%" src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/2017/06/charlie-cox-mike-colter-krysten-ritter-finn-jones-defenders.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=17></a>
     
-    <a  href="#"><img style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace="4%" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=18></a>
+    <a  href="#"><img style="border: 1px solid black;" onclick ="Movie(); DefaultDaredevil();" hspace="4%" src="http://cdn.collider.com/wp-content/uploads/2015/02/daredevil-tv-series-poster-matt-murdock.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=18></a>
     
     <a href="#"><img  style="border: 1px solid black;" onclick ="Movie(); clickonrq();" hspace="4%" src="Coming%20Soon.jpg"  width = "158.4px" height ="234.8px" class="movpost" id=19></a>
     
@@ -742,6 +743,22 @@ function send()
         {
             self.location="Marvel'sDefenders\/Defenders%20Season%201%20MEP.html";
         }
+    }
+    
+    function DefaultDaredevil()
+    {
+        if(localStorage.getItem("CurrentPlayer") == "JW Player")
+        {
+            self.location="Daredevil\/Daredevil%20Season%201%20JW.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "GD Player")
+        {
+            self.location="Daredevil\/Daredevil%20Season%201%20GD.html";
+        }
+        else if(localStorage.getItem("CurrentPlayer") == "MEP Player")
+        {
+            self.location="Daredevil\/Daredevil%20Season%201%20MEP.html";
+        } 
     }
     function key_down(e) 
     {
