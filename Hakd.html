@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="Css/style1.css" type="text/css" />
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+<body>
+    
+    
+    <div class="container">
+        <center>
+        <br><br><br><br>
+        <h1>WELCOME TO INCOGNITO MODE</h1>
+        <span id="Distance"></span><br>
+        <span id="motion"></span><br>
+        </center>
+        <br><br><br><br>
+    </div>
+
+
+    <script type="text/javascript">
+    var distance = 0
+    start();
+    document.getElementById("Distance").style.fontSize = "28px";  
+    function start() 
+    {
+        var deviceID = "470041001051363036373538";
+        var accessToken = "a9d844e915fa5183963dfa166907e08d0cd946f9";
+        var varName = "cm";
+        
+        requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + varName + "/?access_token=" + accessToken;
+        $.getJSON(requestURL, function(json) {
+                 
+                 if (Math.round(parseFloat(json.result)) != distance)
+                     {
+                         document.getElementById("Distance").innerHTML = "Alert Motion is detected at:" + Math.round(parseFloat(json.result)) + "cm away";
+                         distance = Math.round(parseFloat(json.result))
+                         document.getElementById("Distance").style.fontSize = "28px";  
+                         window.setTimeout(start, 1500); 
+                     }
+                  else
+                      {
+                          document.getElementById("Distance").innerHTML = "No Motion Detected";
+                          window.setTimeout(start, 1500); 
+                      }
+                 });
+    }
+
+        
+    </script>
+</body>
+</html>
